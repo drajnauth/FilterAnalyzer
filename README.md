@@ -7,7 +7,7 @@ The program is written in Java and developed using Eclipse.
 
 Usage:
 
-java -jar FilterAnalyser.jar
+java -jar FilterAnalyzer.jar
 
 
 Written by Dave Rajnauth (VE3OOI) and licensed under Creative Commons. No commercial use permitted"
