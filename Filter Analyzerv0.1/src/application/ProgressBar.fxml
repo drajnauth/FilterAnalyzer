@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="45.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.MainScreenController">
+   <children>
+      <AnchorPane prefHeight="66.0" prefWidth="600.0">
+         <children>
+            <ProgressBar fx:id="progressBar" layoutX="14.0" layoutY="11.0" prefHeight="23.0" prefWidth="579.0" progress="0.0" />
+         </children>
+      </AnchorPane>
+   </children>
+</VBox>

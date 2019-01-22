@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="751.0" prefWidth="1066.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.MainScreenController">
+   <children>
+      <MenuBar fx:id="menuBar">
+        <menus>
+          <Menu mnemonicParsing="false" text="File">
+            <items>
+                  <MenuItem fx:id="newMenuOption" mnemonicParsing="false" onAction="#ResetParameters" text="New" />
+              <MenuItem fx:id="openMenuOption" mnemonicParsing="false" onAction="#openFile" text="Open" />
+                  <MenuItem fx:id="saveMenuOption" mnemonicParsing="false" onAction="#saveFile" text="Save" />
+                  <MenuItem fx:id="exitMenuOption" mnemonicParsing="false" onAction="#ExitProgram" text="Exit" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Help">
+            <items>
+              <MenuItem fx:id="aboutMenuOption" mnemonicParsing="false" onAction="#aboutHelp" text="About" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+      <AnchorPane prefHeight="738.0" prefWidth="1066.0">
+         <children>
+            <Button id="singleShotButton" fx:id="singleShotButton" layoutX="708.0" layoutY="382.0" mnemonicParsing="false" onAction="#SingleShot" prefHeight="31.0" prefWidth="71.0" text="Single" />
+            <TextArea id="textArea" fx:id="textArea" layoutX="1.0" layoutY="419.0" prefHeight="297.0" prefWidth="1066.0" wrapText="true" />
+            <Button id="exitButton" fx:id="exitButton" layoutX="966.0" layoutY="382.0" mnemonicParsing="false" onAction="#ExitProgram" prefHeight="31.0" prefWidth="71.0" text="Exit" />
+            <ImageView id="schematicImage" fx:id="schematicImage" fitHeight="238.0" fitWidth="523.0" layoutX="471.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true" />
+            <Button id="sweepButton" fx:id="sweepButton" layoutX="789.0" layoutY="382.0" mnemonicParsing="false" onAction="#GenerateSweep" prefHeight="31.0" prefWidth="71.0" text="Sweep" />
+            <Button id="iterateButton" fx:id="iterateButton" layoutX="879.0" layoutY="382.0" mnemonicParsing="false" onAction="#Iterate" prefHeight="31.0" prefWidth="71.0" text="Iterate" />
+            <Pane layoutX="451.0" layoutY="263.0" prefHeight="150.0" prefWidth="239.0" style="-fx-background-color: #efff7e;">
+               <children>
+                  <Label layoutX="19.0" layoutY="70.0" text="Zin" />
+                  <Label layoutX="14.0" layoutY="111.0" text="Zout" />
+                  <CheckBox fx:id="terminatedCheckBox" layoutX="45.0" layoutY="14.0" mnemonicParsing="false" onAction="#getTerminateImpedance" text="Enable Termination" />
+                  <TextField fx:id="zinRealText" layoutX="55.0" layoutY="65.0" prefHeight="31.0" prefWidth="73.0" />
+                  <Label layoutX="81.0" layoutY="40.0" text="Real" />
+                  <TextField fx:id="zinImagText" layoutX="138.0" layoutY="65.0" prefHeight="31.0" prefWidth="73.0" />
+                  <Label layoutX="142.0" layoutY="40.0" text="Imaginary" />
+                  <TextField fx:id="zoutImagText" layoutX="138.0" layoutY="106.0" prefHeight="31.0" prefWidth="73.0" />
+                  <TextField fx:id="zoutRealText" layoutX="55.0" layoutY="106.0" prefHeight="31.0" prefWidth="73.0" />
+               </children></Pane>
+            <Pane layoutX="1.0" layoutY="4.0" prefHeight="273.0" prefWidth="451.0" style="-fx-background-color: #b9eada;">
+               <children>
+                  <Label layoutX="140.0" layoutY="13.0" text="C1" />
+                  <Label layoutX="8.0" layoutY="42.0" text="Capacitance (pF)" />
+                  <Label layoutX="17.0" layoutY="112.0" text="Motional Capacitance (fF)" />
+                  <Label layoutX="14.0" layoutY="152.0" text="Motional Inductance (mH)" />
+                  <TextField id="realText1" fx:id="y1RText" layoutX="199.0" layoutY="188.0" prefHeight="31.0" prefWidth="54.0" promptText="R" text="11.87" />
+                  <TextField id="imText1" fx:id="y1CText" layoutX="199.0" layoutY="106.0" prefHeight="31.0" prefWidth="54.0" promptText="fF" text="18.77" />
+                  <TextField id="realText2" fx:id="c1Text" layoutX="122.0" layoutY="37.0" prefHeight="31.0" prefWidth="54.0" promptText="pF" text="39" />
+                  <TextField id="imText2" fx:id="y1LText" layoutX="199.0" layoutY="148.0" prefHeight="31.0" prefWidth="54.0" promptText="mH" text="55.89" />
+                  <Label layoutX="216.0" layoutY="78.0" text="Y1" />
+                  <TextField id="realText1" fx:id="y1CSText" layoutX="198.0" layoutY="225.0" prefHeight="31.0" prefWidth="54.0" promptText="pF" text="5" />
+                  <TextField id="realText2" fx:id="c3Text" layoutX="180.0" layoutY="37.0" prefHeight="31.0" prefWidth="54.0" promptText="pF" text="68" />
+                  <Label layoutX="198.0" layoutY="13.0" text="C3" />
+                  <TextField id="realText2" fx:id="c4Text" layoutX="238.0" layoutY="37.0" prefHeight="31.0" prefWidth="54.0" promptText="pF" text="82" />
+                  <TextField id="realText1" fx:id="y2CSText" layoutX="257.0" layoutY="225.0" prefHeight="31.0" prefWidth="54.0" promptText="pF" text="5" />
+                  <Label layoutX="276.0" layoutY="78.0" text="Y2" />
+                  <TextField id="imText2" fx:id="y2LText" layoutX="258.0" layoutY="148.0" prefHeight="31.0" prefWidth="54.0" promptText="mH" text="55.89" />
+                  <TextField id="imText1" fx:id="y2CText" layoutX="257.0" layoutY="106.0" prefHeight="31.0" prefWidth="54.0" promptText="fF" text="18.77" />
+                  <TextField id="realText1" fx:id="y2RText" layoutX="258.0" layoutY="188.0" prefHeight="31.0" prefWidth="54.0" promptText="R" text="11.87" />
+                  <TextField id="realText1" fx:id="y3RText" layoutX="316.0" layoutY="186.0" prefHeight="31.0" prefWidth="54.0" promptText="R" text="11.87" />
+                  <TextField id="imText1" fx:id="y3CText" layoutX="316.0" layoutY="105.0" prefHeight="31.0" prefWidth="54.0" promptText="fF" text="18.77" />
+                  <TextField id="imText2" fx:id="y3LText" layoutX="316.0" layoutY="148.0" prefHeight="31.0" prefWidth="54.0" promptText="mH" text="55.89" />
+                  <Label layoutX="335.0" layoutY="78.0" text="Y3" />
+                  <TextField id="realText1" fx:id="y3CSText" layoutX="316.0" layoutY="225.0" prefHeight="31.0" prefWidth="54.0" promptText="pF" text="5" />
+                  <TextField id="realText2" fx:id="c5Text" layoutX="301.0" layoutY="37.0" prefHeight="31.0" prefWidth="54.0" promptText="pF" text="68" />
+                  <TextField id="realText2" fx:id="c2Text" layoutX="360.0" layoutY="37.0" prefHeight="31.0" prefWidth="54.0" promptText="pF" text="39" />
+                  <TextField id="realText1" fx:id="y4CSText" layoutX="379.0" layoutY="225.0" prefHeight="31.0" prefWidth="54.0" promptText="pF" text="5" />
+                  <Label layoutX="396.0" layoutY="78.0" text="Y4" />
+                  <TextField id="imText2" fx:id="y4LText" layoutX="377.0" layoutY="147.0" prefHeight="31.0" prefWidth="54.0" promptText="mH" text="55.89" />
+                  <TextField id="imText1" fx:id="y4CText" layoutX="377.0" layoutY="105.0" prefHeight="31.0" prefWidth="54.0" promptText="fF" text="18.77" />
+                  <TextField id="realText1" fx:id="y4RText" layoutX="377.0" layoutY="186.0" prefHeight="31.0" prefWidth="54.0" promptText="R" text="11.87" />
+                  <Label layoutX="256.0" layoutY="13.0" text="C4" />
+                  <Label layoutX="319.0" layoutY="13.0" text="C5" />
+                  <Label layoutX="370.0" layoutY="13.0" text="C2" />
+                  <Label layoutX="33.0" layoutY="193.0" text="Motional Resistance (R)" />
+                  <Label layoutX="62.0" layoutY="230.0" text="Case Capitance (pF)" />
+               </children>
+            </Pane>
+            <Pane layoutY="277.0" prefHeight="137.0" prefWidth="451.0" style="-fx-background-color: #b9d5e8;">
+               <children>
+                  <TextField id="realText2" fx:id="startFreqText" layoutX="93.0" layoutY="10.0" prefHeight="31.0" prefWidth="132.0" promptText="Hz" text="4900000" />
+                  <TextField id="realText2" fx:id="endFreqText" layoutX="93.0" layoutY="52.0" prefHeight="31.0" prefWidth="132.0" promptText="Hz" text="4930000" />
+                  <Label layoutX="20.0" layoutY="17.0" text="Start Freq" />
+                  <Label layoutX="23.0" layoutY="57.0" text="End Freq" />
+                  <TextField id="realText2" fx:id="incFreqText" layoutX="93.0" layoutY="93.0" prefHeight="31.0" prefWidth="132.0" promptText="Hz" text="100" />
+                  <Label layoutX="31.0" layoutY="98.0" text="Inc Freq" />
+                  <RadioButton id="plotZButton" fx:id="plotZButton" layoutX="252.0" layoutY="16.0" mnemonicParsing="false" onAction="#RadioButton" selected="true" text="Plot |Z|">
+                     <toggleGroup>
+                        <ToggleGroup fx:id="plotGroup" />
+                     </toggleGroup>
+                  </RadioButton>
+                  <RadioButton id="plotDBButton" fx:id="plotDBButton" layoutX="252.0" layoutY="42.0" mnemonicParsing="false" onAction="#RadioButton" text="Plot |dB|" toggleGroup="$plotGroup" />
+                  <RadioButton id="singleValueButton" fx:id="singleValueButton" layoutX="253.0" layoutY="68.0" mnemonicParsing="false" onAction="#RadioButton" text="Single Freq Calc" toggleGroup="$plotGroup" />
+                  <CheckBox id="printDataCheckBox" fx:id="printDataCheckBox" layoutX="253.0" layoutY="98.0" mnemonicParsing="false" text="Print Data" />
+               </children>
+            </Pane>
+          </children>
+      </AnchorPane>
+   </children>
+</VBox>
