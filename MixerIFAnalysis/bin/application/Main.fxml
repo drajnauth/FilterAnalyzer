@@ -8,51 +8,63 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="478.0" prefWidth="626.0" scaleShape="false" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.MainController">
+<AnchorPane prefHeight="725.0" prefWidth="620.0" scaleShape="false" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.MainController">
    <children>
-      <TextField fx:id="txtRF" layoutX="44.0" layoutY="17.0" prefHeight="31.0" prefWidth="98.0" promptText="Input RF">
+      <Label layoutX="14.0" layoutY="25.0" text="RF" />
+      <Label layoutX="153.0" layoutY="25.0" prefHeight="21.0" prefWidth="51.0" text="RF BW" />
+      <Label layoutX="155.0" layoutY="63.0" prefHeight="21.0" prefWidth="47.0" text="IF BW" />
+      <Label layoutX="17.0" layoutY="105.0" prefHeight="21.0" prefWidth="24.0" text="LO" />
+      <Label layoutX="17.0" layoutY="154.0" prefHeight="21.0" prefWidth="70.0" text="Filter BW" />
+      <Label alignment="TOP_LEFT" layoutX="21.0" layoutY="696.0" prefHeight="21.0" prefWidth="572.0" text="Software (c) VE3OOI. All rights reserved and provided “as is”, without warranty" wrapText="true">
+         <font>
+            <Font size="12.0" />
+         </font></Label>
+      <Label fx:id="txtLO" layoutX="43.0" layoutY="100.0" prefHeight="31.0" prefWidth="98.0" style="-fx-background-color: #effbb5;" textFill="#ebe6e63d">
          <font>
             <Font size="14.0" />
-         </font></TextField>
-      <Label layoutX="15.0" layoutY="22.0" text="RF" />
-      <Label layoutX="154.0" layoutY="22.0" prefHeight="21.0" prefWidth="51.0" text="RF BW" />
-      <TextField fx:id="txtRFBW" layoutX="203.0" layoutY="17.0" prefHeight="31.0" prefWidth="98.0" promptText="Bandwidth">
+         </font></Label>
+      <TextField fx:id="txtRFBW" layoutX="202.0" layoutY="20.0" prefHeight="31.0" prefWidth="98.0" promptText="Bandwidth">
          <font>
             <Font size="14.0" />
          </font>
       </TextField>
-      <Label layoutX="18.0" layoutY="60.0" text="IF" />
-      <TextField fx:id="txtIF" layoutX="44.0" layoutY="55.0" prefHeight="31.0" prefWidth="98.0" promptText="Inter. Freq">
+      <TextField fx:id="txtRF" layoutX="43.0" layoutY="20.0" prefHeight="31.0" prefWidth="98.0" promptText="Input RF">
          <font>
             <Font size="14.0" />
          </font></TextField>
-      <TextField fx:id="txtIFBW" layoutX="203.0" layoutY="55.0" prefHeight="31.0" prefWidth="98.0" promptText="Bandwidth">
+      <TextField fx:id="txtIF" layoutX="43.0" layoutY="58.0" prefHeight="31.0" prefWidth="98.0" promptText="Inter. Freq">
          <font>
             <Font size="14.0" />
          </font></TextField>
-      <Label layoutX="156.0" layoutY="60.0" prefHeight="21.0" prefWidth="47.0" text="IF BW" />
-      <Label layoutX="18.0" layoutY="102.0" prefHeight="21.0" prefWidth="24.0" text="LO" />
-      <Label fx:id="txtLO" layoutX="44.0" layoutY="97.0" prefHeight="31.0" prefWidth="98.0" style="-fx-background-color: #effbb5;" textFill="#ebe6e63e">
+      <TextField fx:id="txtIFBW" layoutX="202.0" layoutY="58.0" prefHeight="31.0" prefWidth="98.0" promptText="Bandwidth">
          <font>
             <Font size="14.0" />
-         </font></Label>
-      <RadioButton fx:id="addvaluesBTN" layoutX="317.0" layoutY="22.0" mnemonicParsing="false" selected="true" text="RF+LO=IF">
+         </font></TextField>
+      <RadioButton fx:id="addvaluesBTN" layoutX="310.0" layoutY="63.0" mnemonicParsing="false" selected="true" text="IF=RF+LO">
          <toggleGroup>
             <ToggleGroup fx:id="radioButtonGroupIF" />
          </toggleGroup>
       </RadioButton>
-      <RadioButton fx:id="subvaluesBTN" layoutX="319.0" layoutY="60.0" mnemonicParsing="false" text="RF-LO=IF" toggleGroup="$radioButtonGroupIF" />
-      <RadioButton fx:id="verboseBTN" layoutX="18.0" layoutY="147.0" mnemonicParsing="false" selected="true" text="Verbose" />
-     <RadioButton fx:id="harmonicBTN" layoutX="119.0" layoutY="147.0" mnemonicParsing="false" selected="true" text="Harmonic Analysis Only">
+      <RadioButton fx:id="subvaluesBTN" layoutX="414.0" layoutY="63.0" mnemonicParsing="false" text="IF=RF-LO" toggleGroup="$radioButtonGroupIF" />
+      <RadioButton fx:id="verboseBTN" layoutX="476.0" layoutY="192.0" mnemonicParsing="false" selected="true" text="Verbose" />
+     <RadioButton fx:id="harmonicBTN" layoutX="17.0" layoutY="192.0" mnemonicParsing="false" selected="true" text="Harmonic Analysis Only">
          <toggleGroup>
             <ToggleGroup fx:id="typeButtonGroup" />
          </toggleGroup>
       </RadioButton>
-      <RadioButton fx:id="byproductBTN" layoutX="319.0" layoutY="147.0" mnemonicParsing="false" text="Harmonic &amp; Byproduct Analysis" toggleGroup="$typeButtonGroup" />
-      <TextArea fx:id="myMessage" editable="false" layoutX="13.0" layoutY="187.0" prefHeight="364.0" prefWidth="607.0" scrollTop="100.0" wrapText="true" />
-      <Button fx:id="Startbtn" layoutX="550.0" layoutY="17.0" mnemonicParsing="false" onAction="#ExecuteAnalysis" prefHeight="31.0" prefWidth="57.0" text="Start" />
-      <Button fx:id="Resetbtn" layoutX="551.0" layoutY="55.0" mnemonicParsing="false" onAction="#ResetProgram" text="Reset" />
-      <Button fx:id="Exitbtn1" layoutX="551.0" layoutY="97.0" mnemonicParsing="false" onAction="#ExitProgram" prefHeight="31.0" prefWidth="57.0" text="Exit" />
-      <CheckBox id="sqrwaveCheckBox" fx:id="sqrwaveCheckBox" layoutX="151.0" layoutY="102.0" mnemonicParsing="false" selected="true" text="LO SQR Wave" />
+      <RadioButton fx:id="byproductBTN" layoutX="222.0" layoutY="192.0" mnemonicParsing="false" text="Harmonic &amp; Byproduct Analysis" toggleGroup="$typeButtonGroup" />
+      <TextArea fx:id="myMessage" editable="false" layoutX="20.0" layoutY="223.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="473.0" prefWidth="581.0" scrollTop="100.0" wrapText="true" />
+      <Button fx:id="Startbtn" layoutX="549.0" layoutY="20.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#ExecuteAnalysis" prefHeight="31.0" prefWidth="57.0" text="Start" />
+      <Button fx:id="Resetbtn" layoutX="550.0" layoutY="58.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#ResetProgram" prefHeight="31.0" prefWidth="57.0" text="Reset" />
+      <Button fx:id="Exitbtn1" layoutX="550.0" layoutY="100.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#ExitProgram" prefHeight="31.0" prefWidth="57.0" text="Exit" />
+      <CheckBox id="sqrwaveCheckBox" fx:id="sqrwaveCheckBox" layoutX="150.0" layoutY="105.0" mnemonicParsing="false" selected="true" text="LO SQR Wave" />
+      <RadioButton fx:id="bpfBTN" layoutX="222.0" layoutY="154.0" mnemonicParsing="false" onAction="#bpfBTNPressed" text="BPF Analysis" />
+      <TextField fx:id="txtFiltBW" layoutX="88.0" layoutY="149.0" prefHeight="31.0" prefWidth="107.0" promptText="FilterBandwidth">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </TextField>
+      <Button fx:id="helpBTN" layoutX="549.0" layoutY="139.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#helpBTNPressed" prefHeight="31.0" prefWidth="57.0" text="Help" />
+      <Label layoutX="17.0" layoutY="63.0" prefHeight="21.0" prefWidth="24.0" text="IF" />
    </children>
 </AnchorPane>
