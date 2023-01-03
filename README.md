@@ -3,8 +3,8 @@ Four Pole Crystal Ladder Filter Analyzer
 
 Filter Analyzer is a program that is used to characterize a four pole crystal ladder filter using Thevenin equilavent circuit and Kirchhoff's current law. It calculates the voltage gain, input impedance and output impedance as a function of frequency. It also generates plots of voltage gain (bode plot) and impedance.
 
-The program is written in Java and developed using Eclipse. The program requires Java VM to be installed (https://www.java.com/en/download/).  You need to understand how to run a Java program using the Java VM.
-
+The program is written in Java and developed using Eclipse. The program requires Java VM to be installed.  You need to understand how to run a Java program using the Java VM.  Currently only Java 1.8.0_811 is supported and can be downloaded from https://www.oracle.com/java/technologies/javase/javase8u211-later-archive-downloads.html
+Download "Java SE Runtime Environment 8u311".  To run the program there is a FilterAnalyzer.jar file or a filteranalyzer.bat. Run the bat file if you don't understand how to run a java program.
 
 Usage:
 
